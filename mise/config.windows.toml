@@ -1,0 +1,6 @@
+[bootstrap.packages]
+"winget:Microsoft.PowerShell" = "latest"
+"winget:Microsoft.WindowsTerminal" = "latest"
+"winget:Microsoft.PowerToys" = "latest"
+"winget:Git.Git" = "latest"
+"winget:GitHub.cli" = "latest"
