@@ -10,9 +10,10 @@ node = "24.22.3"
 pnpm = "11.10.0"
 
 [dotfiles]
-"~/.gitconfig" = { source = "../.gitconfig" }
-"~/.gitignore" = { source = "../.gitignore" }
-"~/.agents/skills" = { source = "../agents/skills" }
-"~/.cursor/rules" = { source = "../cursor/rules" }
-"~/.codex/AGENTS.md" = { source = "../codex/AGENTS.md" }
-"~/.codex/config.toml/base" = { source = "../codex/config.base.toml", merge = true }
+"~/.gitconfig" = { source = "~/workspace/wooseong/dotfiles/.gitconfig" }
+"~/.gitignore" = { source = "~/workspace/wooseong/dotfiles/.gitignore" }
+"~/.config/mise/config.toml" = { source = "~/workspace/wooseong/dotfiles/mise/config.toml" }
+"~/.agents/skills" = { source = "~/workspace/wooseong/dotfiles/agents/skills" }
+"~/.cursor/rules" = { source = "~/workspace/wooseong/dotfiles/cursor/rules" }
+"~/.codex/AGENTS.md" = { source = "~/workspace/wooseong/dotfiles/codex/AGENTS.md" }
+"~/.codex/config.toml/base" = { source = "~/workspace/wooseong/dotfiles/codex/config.base.toml", merge = true }
