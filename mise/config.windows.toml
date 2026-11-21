@@ -4,3 +4,7 @@
 "winget:Microsoft.PowerToys" = "latest"
 "winget:Git.Git" = "latest"
 "winget:GitHub.cli" = "latest"
+
+[dotfiles]
+"~/.config/mise/config.windows.toml" = { source = "~/workspace/wooseong/dotfiles/mise/config.windows.toml" }
+"~/.config/mise/miserc.toml" = { source = "~/workspace/wooseong/dotfiles/.miserc.toml" }
