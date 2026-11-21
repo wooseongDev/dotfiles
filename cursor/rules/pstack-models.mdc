@@ -1,0 +1,29 @@
+---
+description: pstack per-role model choices for Codex in T3 Code (overrides skill defaults)
+alwaysApply: true
+---
+# pstack model configuration. One line per role.
+# defaults: 3
+# budget: large (xhigh)
+feature, refactoring: gpt-6.2-sol
+bug-fix: gpt-6.2-sol
+perf-issue: gpt-6.2-sol
+hillclimb: gpt-6.2-sol
+judgment and prose: gpt-6.2-astra
+arena runners: gpt-6.2-sol, gpt-6.2-astra
+arena cross-judge pool: inherit-parent
+swarm workers: gpt-6.2-sol
+interrogate reviewers: gpt-6.2-sol, gpt-6.2-astra
+
+## Codex / T3 Code adapter
+
+Apply this configuration when a pstack skill is invoked. Role choices override pstack's model defaults; this configuration does not request additional delegation on its own.
+
+- `Task` means an available subagent tool. Follow the session's T3 orchestration instructions when choosing native subagents or `delegate_task`. Do not create top-level threads for subagent work.
+- In T3 `delegate_task`, pass the role model ID as `target.model`, use `target.providerInstanceId: "codex"`, and set `target.options: {reasoningEffort: <effort>, serviceTier: "default"}`. With native Codex subagents, use `model` and `reasoning_effort`, using a fresh context when the tool requires it for overrides.
+- At the large budget, start arena runners, swarm workers, and interrogate reviewers at `high` and other real-model roles at `xhigh`. Medium lowers those starting levels one step and small lowers them two steps on the `xhigh` > `high` > `medium` > `low` ladder, stopping at `low`.
+- When a skill allows effort adjustments, use `medium` for a quick survey, `high` to trace a suspected cause across systems, and `xhigh` when several causes may interact. Keep the role model and apply the skill's panel rules. Give each delegated task a concrete completion criterion and state what needs thorough verification.
+- `inherit-parent` and `auto` inherit the parent model and options. Omit model and option overrides. An alias entry in a panel still counts as one agent; list length sets panel size.
+- Confirm availability using the active tools. Only enabled providers that can run children qualify. If a configured model or option is unavailable, report the constraint and ask for a replacement; do not silently use pstack's Claude/Grok defaults.
+- Both configured models are from OpenAI. With only `inherit-parent` in the pool, Arena skips the cross-vendor judge and reports the skip. The runner and reviewer panels use both configured models.
+- When re-running setup-pstack in Codex, preserve this adapter and update the role models and budget in this rule. Follow the session's instructions for child lifecycle, review dispatches, waits, and cancellation.

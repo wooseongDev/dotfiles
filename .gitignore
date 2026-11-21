@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# dotenv
+.env
+.env.*
+!.env.example
+!.env.sample

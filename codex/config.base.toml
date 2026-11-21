@@ -1,0 +1,9 @@
+model = "gpt-6.2-sol"
+model_reasoning_effort = "medium"
+
+[marketplaces.cursor-plugins]
+source_type = "git"
+source = "https://github.com/cursor/plugins.git"
+
+[plugins."pstack@cursor-plugins"]
+enabled = true

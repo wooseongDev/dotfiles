@@ -1,0 +1,18 @@
+min_version = "2026.11.5"
+
+[settings]
+auto_update = true
+idiomatic_version_file_enable_tools = ["node", "npm", "pnpm", "yarn"]
+idiomatic_version_file_disable_files = ["node:package.json"]
+
+[tools]
+node = "24.22.3"
+pnpm = "11.10.0"
+
+[dotfiles]
+"~/.gitconfig" = { source = "../.gitconfig" }
+"~/.gitignore" = { source = "../.gitignore" }
+"~/.agents/skills" = { source = "../agents/skills" }
+"~/.cursor/rules" = { source = "../cursor/rules" }
+"~/.codex/AGENTS.md" = { source = "../codex/AGENTS.md" }
+"~/.codex/config.toml/base" = { source = "../codex/config.base.toml", merge = true }
