@@ -1,2 +1,10 @@
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
 eval "$("$HOME/.local/bin/mise" activate zsh)"
 eval "$(starship init zsh)"
