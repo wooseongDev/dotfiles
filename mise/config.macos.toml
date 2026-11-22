@@ -1,0 +1,11 @@
+[bootstrap.packages]
+"brew:git" = "latest"
+"brew:gh" = "latest"
+"brew:lazygit" = "latest"
+"brew:ffmpeg" = "latest"
+"brew:starship" = "latest"
+
+[dotfiles]
+"~/.config/mise/config.macos.toml" = { source = "~/workspace/wooseong/dotfiles/mise/config.macos.toml" }
+"~/.config/mise/miserc.toml" = { source = "~/workspace/wooseong/dotfiles/.miserc.toml" }
+"~/.zshrc" = { source = "~/workspace/wooseong/dotfiles/.zshrc" }
