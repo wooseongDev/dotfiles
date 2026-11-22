@@ -4,7 +4,14 @@
 "winget:Microsoft.PowerToys" = "latest"
 "winget:Git.Git" = "latest"
 "winget:GitHub.cli" = "latest"
+"winget:Starship.Starship" = "latest"
+"winget:Gyan.FFmpeg" = "latest"
 
 [dotfiles]
 "~/.config/mise/config.windows.toml" = { source = "~/workspace/wooseong/dotfiles/mise/config.windows.toml" }
 "~/.config/mise/miserc.toml" = { source = "~/workspace/wooseong/dotfiles/.miserc.toml" }
+"~/.config/powershell/profile.ps1" = { source = "~/workspace/wooseong/dotfiles/powershell/profile.ps1", mode = "copy" }
+
+[bootstrap.hooks.post-dotfiles]
+description = "Load the managed profile from the current user's PowerShell 7 profile"
+run_windows = 'pwsh -NoProfile -NonInteractive -File "{{ env.USERPROFILE }}/workspace/wooseong/dotfiles/powershell/install-profile.ps1"'

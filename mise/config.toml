@@ -13,6 +13,7 @@ pnpm = "11.10.0"
 "~/.gitconfig" = { source = "~/workspace/wooseong/dotfiles/.gitconfig" }
 "~/.gitignore" = { source = "~/workspace/wooseong/dotfiles/.gitignore" }
 "~/.config/mise/config.toml" = { source = "~/workspace/wooseong/dotfiles/mise/config.toml" }
+"~/.config/starship.toml" = { source = "~/workspace/wooseong/dotfiles/starship.toml" }
 "~/.agents/skills" = { source = "~/workspace/wooseong/dotfiles/agents/skills" }
 "~/.cursor/rules" = { source = "~/workspace/wooseong/dotfiles/cursor/rules" }
 "~/.codex/AGENTS.md" = { source = "~/workspace/wooseong/dotfiles/codex/AGENTS.md" }
