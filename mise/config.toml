@@ -8,7 +8,8 @@ idiomatic_version_file_disable_files = ["node:package.json"]
 [tools]
 node = "24.22.3"
 pnpm = "11.10.0"
-rust = "1.100.0"
+rust = { version = "1.100.0", mr_boxington = true }
+mr-boxington = "latest"
 
 [dotfiles]
 "~/.gitconfig" = { source = "~/workspace/wooseong/dotfiles/.gitconfig" }
