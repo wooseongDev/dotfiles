@@ -1,10 +1,15 @@
 [bootstrap.packages]
-"winget:Microsoft.PowerShell" = "latest"
 "winget:Microsoft.WindowsTerminal" = "latest"
-"winget:Microsoft.PowerToys" = "latest"
+"winget:Microsoft.PowerShell" = "latest"
+
 "winget:Git.Git" = "latest"
 "winget:GitHub.cli" = "latest"
+
 "winget:Starship.Starship" = "latest"
+
+"winget:astral-sh.uv" = "latest"
+
+"winget:Microsoft.PowerToys" = "latest"
 "winget:Gyan.FFmpeg" = "latest"
 
 [dotfiles]
